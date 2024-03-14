@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kf0-Wd-tOK">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FrenchTranslator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Translate from French to English and back!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQp-bs-N1k">
+                                <rect key="frame" x="53" y="139" width="287" height="138"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKO-Od-kb7">
+                                <rect key="frame" x="28" y="319" width="340" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="d8r-Go-Qd1"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="English to French"/>
+                                <connections>
+                                    <action selector="EngTranslateClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TU2-L1-0EC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8O-GU-ntH">
+                                <rect key="frame" x="28" y="429" width="340" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="63" id="Eso-30-2EQ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="French to English"/>
+                                <connections>
+                                    <action selector="FrenchTranslateClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uxs-Vj-6gI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.59841275981842035" green="1" blue="0.95407964183514182" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vKO-Od-kb7" secondAttribute="trailing" constant="25" id="1kT-vh-h5Z"/>
+                            <constraint firstItem="JQp-bs-N1k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="TTn-Bz-ckF"/>
+                            <constraint firstItem="JQp-bs-N1k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TmI-Ys-1BH"/>
+                            <constraint firstItem="K8O-GU-ntH" firstAttribute="top" secondItem="vKO-Od-kb7" secondAttribute="bottom" constant="47" id="XGh-yz-NIM"/>
+                            <constraint firstItem="vKO-Od-kb7" firstAttribute="leading" secondItem="K8O-GU-ntH" secondAttribute="leading" id="ahT-Fl-H8k"/>
+                            <constraint firstItem="vKO-Od-kb7" firstAttribute="trailing" secondItem="K8O-GU-ntH" secondAttribute="trailing" id="eKy-bf-Sig"/>
+                            <constraint firstItem="JQp-bs-N1k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="53" id="fwG-Lz-oaD"/>
+                            <constraint firstItem="vKO-Od-kb7" firstAttribute="top" secondItem="JQp-bs-N1k" secondAttribute="bottom" constant="42" id="iid-qy-QZO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="K8O-GU-ntH" secondAttribute="bottom" constant="326" id="oQg-wa-ApH"/>
+                            <constraint firstItem="vKO-Od-kb7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="qgx-Ke-X5Z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CmE-9x-6P5"/>
+                    <connections>
+                        <segue destination="kc9-Ed-tyG" kind="show" identifier="EnglishSegue" id="hMQ-cV-dqC"/>
+                        <segue destination="dcz-o6-hzq" kind="show" identifier="FrenchSegue" id="WVH-rK-jC9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="973.28244274809151" y="3.5211267605633805"/>
+        </scene>
+        <!--French To English-->
+        <scene sceneID="X81-NT-q08">
+            <objects>
+                <viewController id="dcz-o6-hzq" customClass="FrenchToEnglish" customModule="FrenchTranslator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cEH-BJ-x7h">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8L7-Mc-cyk">
+                                <rect key="frame" x="57" y="247" width="275" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkd-gd-A8I">
+                                <rect key="frame" x="104" y="345" width="181" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Translate Expression"/>
+                                <connections>
+                                    <action selector="onClick:" destination="dcz-o6-hzq" eventType="touchUpInside" id="QJ0-Jo-XYp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM6-PO-fz3">
+                                <rect key="frame" x="65" y="429" width="267" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter a French Phrase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMd-kE-Qmb">
+                                <rect key="frame" x="65" y="164" width="258" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="I6M-gV-sDb"/>
+                        <color key="backgroundColor" red="0.59841275979999997" green="1" blue="0.95407964180000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BpX-jm-rwO"/>
+                    <connections>
+                        <outlet property="displayText" destination="cM6-PO-fz3" id="NyZ-VQ-Otw"/>
+                        <outlet property="inputText" destination="8L7-Mc-cyk" id="4vN-Fs-t0B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gyG-1R-NzY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1896.9465648854962" y="343.66197183098592"/>
+        </scene>
+        <!--English To French-->
+        <scene sceneID="fYH-az-h9b">
+            <objects>
+                <viewController id="kc9-Ed-tyG" customClass="EnglishToFrench" customModule="FrenchTranslator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ls4-39-DWc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kmr-WL-tBf">
+                                <rect key="frame" x="68" y="195" width="262" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter an English Phrase" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6z-Bg-OW5">
+                                <rect key="frame" x="100" y="107" width="180" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPe-yi-Rju">
+                                <rect key="frame" x="106" y="276" width="181" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Translate Expression"/>
+                                <connections>
+                                    <action selector="EngTranslateClicked:" destination="kc9-Ed-tyG" eventType="touchUpInside" id="ZoM-On-up2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIb-3C-WfL">
+                                <rect key="frame" x="68" y="364" width="262" height="136"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="e8O-Ni-nkT"/>
+                        <color key="backgroundColor" red="0.59841275979999997" green="1" blue="0.95407964180000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="J1x-tN-BCi"/>
+                    <connections>
+                        <outlet property="EnglishText" destination="kmr-WL-tBf" id="EQp-KE-8df"/>
+                        <outlet property="translationLabel" destination="LIb-3C-WfL" id="Tk8-dy-oio"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f38-TZ-6bC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1869.4656488549617" y="-344.36619718309862"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mWB-4v-Uo4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kf0-Wd-tOK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Ir-Ws-USO">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="MkA-FY-eHo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3g9-jI-ALm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
