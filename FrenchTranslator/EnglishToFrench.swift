@@ -11,10 +11,17 @@ class EnglishToFrench: UIViewController {
 
     @IBOutlet weak var translationLabel: UILabel!
     @IBOutlet weak var EnglishText: UITextField!
+    var apiEndpoint = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
+            if let dict = NSDictionary(contentsOfFile: path) as? [String: Any] {
+                if let value = dict["ParseClientKey"] as? String {
+                    apiEndpoint = value
+                }
+                }
+            }
     }
     
 
@@ -25,9 +32,7 @@ class EnglishToFrench: UIViewController {
         } else {
             uploadText = EnglishText.text!
         }
-        print("asdfffff")
-        
-        let url = URL(string: "https://safe-depths-81738-beead740ca76.herokuapp.com/translateFromEng")
+        let url = URL(string: apiEndpoint+"/translateFromEng")
         let parameters: [String: Any] = [
             "request" : [
                 "phrase": uploadText,
@@ -53,9 +58,6 @@ class EnglishToFrench: UIViewController {
             } else {
                 if data != nil {
                     do {
-                        print("what?")
-                        print(data)
-                        print(data!)
                         let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String, Any>
                         print(jsonResponse)
                         
@@ -64,11 +66,6 @@ class EnglishToFrench: UIViewController {
                             self.translationLabel.text = translatedText
                             print(jsonResponse["Translation"]!)
                             print("hi")
-                            
-                          //  if let rates = jsonResponse["rates"] as? [String : Any ] {
-                            //    if let cad = rates["CAD"] as? Double {
-                              //      self.label1.text = "CAD: \(cad)"
-                              //  }
                                 
                           //  }
                         }

@@ -11,8 +11,17 @@ class FrenchToEnglish: UIViewController {
 
     @IBOutlet weak var displayText: UILabel!
     @IBOutlet weak var inputText: UITextField!
+    var apiEndpoint = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
+            if let dict = NSDictionary(contentsOfFile: path) as? [String: Any] {
+                if let value = dict["ParseClientKey"] as? String {
+                    apiEndpoint = value
+                }
+                }
+            }
 
         // Do any additional setup after loading the view.
     }
@@ -28,7 +37,7 @@ class FrenchToEnglish: UIViewController {
              uploadText = inputText.text!
          }
          
-         let url = URL(string: "https://safe-depths-81738-beead740ca76.herokuapp.com/translateFromFrench")
+         let url = URL(string: apiEndpoint+"/translateFromFrench")
          let parameters: [String: Any] = [
              "request" : [
                  "phrase": uploadText,
